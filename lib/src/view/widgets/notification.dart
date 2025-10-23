@@ -58,7 +58,7 @@ class _NotificationState extends State<Notification>
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: ChuckerUiHelper.settings.duration.inSeconds - 1),
+      Duration(seconds: 5),
           () {
         if (mounted) _controller.reverse();
       },
