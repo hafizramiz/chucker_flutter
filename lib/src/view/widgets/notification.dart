@@ -58,14 +58,14 @@ class _NotificationState extends State<Notification>
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 5),
-      () {
+      Duration(seconds: ChuckerUiHelper.settings.duration.inSeconds - 1),
+          () {
         if (mounted) _controller.reverse();
       },
     );
 
     _controller.addListener(
-      () {
+          () {
         if (_controller.status == AnimationStatus.completed ||
             _controller.status == AnimationStatus.dismissed) {
           widget.removeNotification();
